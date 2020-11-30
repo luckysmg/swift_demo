@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVKit
 import Photos
 
 class PhotoCell: UICollectionViewCell {
