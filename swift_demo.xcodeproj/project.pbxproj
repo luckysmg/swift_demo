@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		126FB76425750497009972E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126FB76325750497009972E6 /* AppDelegate.swift */; };
 		126FB76625750497009972E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126FB76525750497009972E6 /* SceneDelegate.swift */; };
-		126FB76825750497009972E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126FB76725750497009972E6 /* ContentView.swift */; };
 		126FB76A25750498009972E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126FB76925750498009972E6 /* Assets.xcassets */; };
 		126FB76D25750498009972E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126FB76C25750498009972E6 /* Preview Assets.xcassets */; };
 		126FB77025750498009972E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126FB76E25750498009972E6 /* LaunchScreen.storyboard */; };
@@ -56,10 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		126FB76025750497009972E6 /* swift_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = swift_demo.app; path = "/Users/luckysmg/Desktop/swift_demo/build/Debug-iphoneos/swift_demo.app"; sourceTree = "<absolute>"; };
 		126FB76325750497009972E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		126FB76525750497009972E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		126FB76725750497009972E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		126FB76925750498009972E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		126FB76C25750498009972E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		126FB76F25750498009972E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,6 +102,7 @@
 		126FB7A525750505009972E6 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		126FB7A625750505009972E6 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		126FB7A725750505009972E6 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		12D97213257506B300270C4A /* swift_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,19 +120,18 @@
 			isa = PBXGroup;
 			children = (
 				126FB76225750497009972E6 /* swift_demo */,
+				12D97213257506B300270C4A /* swift_demo.app */,
 			);
 			sourceTree = "<group>";
 		};
 		126FB76225750497009972E6 /* swift_demo */ = {
 			isa = PBXGroup;
 			children = (
+				12D97215257506E200270C4A /* Controllers */,
+				12D972172575070500270C4A /* Views */,
 				126FB78125750505009972E6 /* Snapkit */,
 				126FB76325750497009972E6 /* AppDelegate.swift */,
 				126FB76525750497009972E6 /* SceneDelegate.swift */,
-				126FB779257504BE009972E6 /* ChatViewController.swift */,
-				126FB778257504BE009972E6 /* PhotoCollectionViewController.swift */,
-				126FB77A257504BE009972E6 /* StickyBottomKeyBoardView.swift */,
-				126FB76725750497009972E6 /* ContentView.swift */,
 				126FB76925750498009972E6 /* Assets.xcassets */,
 				126FB76E25750498009972E6 /* LaunchScreen.storyboard */,
 				126FB77125750498009972E6 /* Info.plist */,
@@ -196,6 +193,23 @@
 			path = Snapkit;
 			sourceTree = "<group>";
 		};
+		12D97215257506E200270C4A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				126FB779257504BE009972E6 /* ChatViewController.swift */,
+				126FB778257504BE009972E6 /* PhotoCollectionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		12D972172575070500270C4A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				126FB77A257504BE009972E6 /* StickyBottomKeyBoardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,7 +227,7 @@
 			);
 			name = swift_demo;
 			productName = swift_demo;
-			productReference = 126FB76025750497009972E6 /* swift_demo.app */;
+			productReference = 12D97213257506B300270C4A /* swift_demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -272,7 +286,6 @@
 				126FB77D257504BE009972E6 /* StickyBottomKeyBoardView.swift in Sources */,
 				126FB76625750497009972E6 /* SceneDelegate.swift in Sources */,
 				126FB7BD25750505009972E6 /* ConstraintConstantTarget.swift in Sources */,
-				126FB76825750497009972E6 /* ContentView.swift in Sources */,
 				126FB7BA25750505009972E6 /* ConstraintLayoutGuide.swift in Sources */,
 				126FB7AC25750505009972E6 /* ConstraintAttributes.swift in Sources */,
 				126FB7BB25750505009972E6 /* ConstraintLayoutSupport.swift in Sources */,
