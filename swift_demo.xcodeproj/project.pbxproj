@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12045DF62577507A0042753C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12045DF52577507A0042753C /* extensions.swift */; };
 		124B628725768A37003FE1C1 /* VideoEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124B628625768A37003FE1C1 /* VideoEditController.swift */; };
 		124B628A25769643003FE1C1 /* asset.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 124B628925769643003FE1C1 /* asset.MOV */; };
 		126FB76425750497009972E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126FB76325750497009972E6 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12045DF52577507A0042753C /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		124B628625768A37003FE1C1 /* VideoEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditController.swift; sourceTree = "<group>"; };
 		124B628925769643003FE1C1 /* asset.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = asset.MOV; sourceTree = "<group>"; };
 		126FB76325750497009972E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				126FB76325750497009972E6 /* AppDelegate.swift */,
 				126FB76525750497009972E6 /* SceneDelegate.swift */,
 				12D9721B25753AD700270C4A /* MainViewController.swift */,
+				12045DF52577507A0042753C /* extensions.swift */,
 				126FB76925750498009972E6 /* Assets.xcassets */,
 				126FB76E25750498009972E6 /* LaunchScreen.storyboard */,
 				126FB77125750498009972E6 /* Info.plist */,
@@ -295,6 +298,7 @@
 				126FB7CA25750505009972E6 /* ConstraintDirectionalInsets.swift in Sources */,
 				126FB77D257504BE009972E6 /* StickyBottomKeyBoardView.swift in Sources */,
 				126FB76625750497009972E6 /* SceneDelegate.swift in Sources */,
+				12045DF62577507A0042753C /* extensions.swift in Sources */,
 				126FB7BD25750505009972E6 /* ConstraintConstantTarget.swift in Sources */,
 				126FB7BA25750505009972E6 /* ConstraintLayoutGuide.swift in Sources */,
 				126FB7AC25750505009972E6 /* ConstraintAttributes.swift in Sources */,
