@@ -8,9 +8,26 @@
 import UIKit
 import Photos
 
+
 class PhotoCell: UICollectionViewCell {
     
     var imageView = UIImageView()
+    var asset:PHAsset?{
+        didSet{
+            if let asset = self.asset {
+                let requestOption = PHImageRequestOptions()
+                requestOption.deliveryMode = .highQualityFormat
+                requestOption.isSynchronous = true
+                let manager = PHImageManager.default()
+                manager.requestImage(for: asset, targetSize: CGSize.init(width: 200, height: 200), contentMode: .aspectFill, options: requestOption) { (image, error) in
+                    if let image = image{
+                        self.imageView.image = image
+                    }
+                }
+            }
+        }
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,23 +42,9 @@ class PhotoCell: UICollectionViewCell {
     }
 }
 
-
-class PhotoCollectionViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate{
+class PhotoCollectionViewController: UIViewController{
     
-    var images = [UIImage]()
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.images.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PhotoCell
-        cell.imageView.image = self.images[indexPath.item]
-        return cell
-        
-    }
-    
+    var assets = [PHAsset]()
     let cellId = "cellId"
     
     lazy var collectionView: UICollectionView = {
@@ -54,6 +57,9 @@ class PhotoCollectionViewController: UIViewController,UICollectionViewDataSource
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.alwaysBounceVertical = true
+        collectionView.beginInteractiveMovementForItem(at: IndexPath(item: 0, section: 0))
         return collectionView
     }()
     
@@ -69,36 +75,67 @@ class PhotoCollectionViewController: UIViewController,UICollectionViewDataSource
                 self.collectionView.reloadData()
             }
         }
-        
-        
     }
 
     
     func fetchPhoto()  {
-        let manager = PHImageManager.default()
-        let requestOption = PHImageRequestOptions()
-        requestOption.deliveryMode = .highQualityFormat
-        requestOption.isSynchronous = true
-        
         let collection  = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype:.smartAlbumUserLibrary, options: nil)
+        
         collection.enumerateObjects { (collection, index, stop) in
             let assetResult = PHAsset.fetchAssets(in: collection,options:nil)
-            
             for i in 0..<assetResult.count{
-                manager.requestImage(for: assetResult.object(at: i), targetSize: CGSize.init(width: 200, height: 200), contentMode: .aspectFill, options: requestOption) { (image, error) in
-                    if let image = image{
-                        self.images.append(image)
-                    }
+                if(assetResult[i].mediaType != .video){
+                    continue
                 }
-                
+                self.assets.append(assetResult[i])
             }
         }
         
         
         
     }
+}
+
+
+extension PhotoCollectionViewController:UICollectionViewDataSource,UICollectionViewDelegate{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        
+        
+        
+        let requestionOption = PHVideoRequestOptions()
+        requestionOption.deliveryMode = .highQualityFormat
+        
+        let manager = PHImageManager.default()
+        manager.requestAVAsset(forVideo: self.assets[indexPath.item], options: requestionOption) { (asset, mix, error) in
+            
+            DispatchQueue.main.async {
+                if let asset = asset{
+                    let videoEditController = VideoEditController(asset: asset)
+                    videoEditController.modalPresentationStyle = .fullScreen
+                    self.present(videoEditController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.assets.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PhotoCell
+        cell.asset = self.assets[indexPath.item]
+        return cell
+        
+    }
     
 }
+
+
 
 #if DEBUG
 import SwiftUI

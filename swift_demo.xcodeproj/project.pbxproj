@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124B628725768A37003FE1C1 /* VideoEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124B628625768A37003FE1C1 /* VideoEditController.swift */; };
+		124B628A25769643003FE1C1 /* asset.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 124B628925769643003FE1C1 /* asset.MOV */; };
 		126FB76425750497009972E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126FB76325750497009972E6 /* AppDelegate.swift */; };
 		126FB76625750497009972E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126FB76525750497009972E6 /* SceneDelegate.swift */; };
 		126FB76A25750498009972E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126FB76925750498009972E6 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		124B628625768A37003FE1C1 /* VideoEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditController.swift; sourceTree = "<group>"; };
+		124B628925769643003FE1C1 /* asset.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = asset.MOV; sourceTree = "<group>"; };
 		126FB76325750497009972E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		126FB76525750497009972E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		126FB76925750498009972E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		126FB75725750497009972E6 = {
 			isa = PBXGroup;
 			children = (
+				124B628925769643003FE1C1 /* asset.MOV */,
 				126FB76225750497009972E6 /* swift_demo */,
 				12D97213257506B300270C4A /* swift_demo.app */,
 			);
@@ -201,6 +206,7 @@
 			children = (
 				126FB779257504BE009972E6 /* ChatViewController.swift */,
 				126FB778257504BE009972E6 /* PhotoCollectionViewController.swift */,
+				124B628625768A37003FE1C1 /* VideoEditController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				126FB77025750498009972E6 /* LaunchScreen.storyboard in Resources */,
+				124B628A25769643003FE1C1 /* asset.MOV in Resources */,
 				126FB76D25750498009972E6 /* Preview Assets.xcassets in Resources */,
 				126FB76A25750498009972E6 /* Assets.xcassets in Resources */,
 			);
@@ -304,6 +311,7 @@
 				126FB7B325750505009972E6 /* ConstraintPriority.swift in Sources */,
 				126FB7B025750505009972E6 /* ConstraintMakerFinalizable.swift in Sources */,
 				126FB7C725750505009972E6 /* ConstraintRelatableTarget.swift in Sources */,
+				124B628725768A37003FE1C1 /* VideoEditController.swift in Sources */,
 				126FB7C625750505009972E6 /* Debugging.swift in Sources */,
 				126FB7A825750505009972E6 /* ConstraintMultiplierTarget.swift in Sources */,
 				126FB7C925750505009972E6 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
